@@ -1,0 +1,95 @@
+>>> ML-HUI START (minutil=80) <<<
+Bước 1: I ← tập hợp các mục trong D
+ I: [Egg, Lemon, Bread, Salt, Oil, Sauce, Fish, Chicken, Garlic, Beef, Pork, Rice, Milk]
+Bước 2: GI ← tập hợp các mục tổng quát trong I
+ GI: [Dairy, Staple, Protein, Seasoning, Meat]
+Bước 3-4: Tính TWU của các mặt hàng trong I và GI
+ TWU(Egg) = 84
+ TWU(Lemon) = 81
+ TWU(Protein) = 84
+ TWU(Seasoning) = 334
+ TWU(Meat) = 386
+ TWU(Bread) = 79
+ TWU(Salt) = 91
+ TWU(Oil) = 132
+ TWU(Sauce) = 121
+ TWU(Dairy) = 79
+ TWU(Fish) = 125
+ TWU(Chicken) = 77
+ TWU(Garlic) = 71
+ TWU(Staple) = 295
+ TWU(Beef) = 90
+ TWU(Pork) = 94
+ TWU(Rice) = 216
+ TWU(Milk) = 79
+Bước 5-6: Lọc các mục (I*) và các mục tổng quát (GT*) dựa trên ngưỡng TWU và cấp độ
+    - L0: Egg  (TWU=84)
+    - L0: Lemon  (TWU=81)
+    - L1: Protein  (TWU=84)
+    - L1: Seasoning  (TWU=334)
+    - L1: Meat  (TWU=386)
+    - L0: Salt  (TWU=91)
+    - L0: Oil  (TWU=132)
+    - L0: Sauce  (TWU=121)
+    - L0: Fish  (TWU=125)
+    - L1: Staple  (TWU=295)
+    - L0: Beef  (TWU=90)
+    - L0: Pork  (TWU=94)
+    - L0: Rice  (TWU=216)
+Bước 7: Xây dựng danh sách hữu ích(utility list) ban đầu và cấu trúc EUCS
+Bước 8: Tạo tổ hợp đệ quy và lựa chọn
+
+--- DFS LEVEL 0 ---
+ Utility(Lemon)= 6
+ Utility(Egg)= 28
+ Utility(Beef)= 54
+ Utility(Salt)= 2
+ Utility(Pork)= 48
+ Utility(Sauce)= 28
+ Utility(Fish)= 98
+ Utility(Oil)= 18
+ Utility(Rice)= 39
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Salt,Oil) = 44
+ TU(Salt,Fish) = 91
+ TU(Salt,Rice) = 44
+ TU(Oil,Rice) = 132
+ TU(Egg,Oil) = 57
+ TU(Egg,Pork) = 57
+ TU(Egg,Rice) = 57
+ TU(Sauce,Rice) = 84
+ TU(Fish,Oil) = 44
+ TU(Fish,Rice) = 44
+ TU(Beef,Sauce) = 38
+ TU(Beef,Rice) = 38
+ TU(Lemon,Salt) = 47
+ TU(Lemon,Fish) = 81
+ TU(Pork,Oil) = 57
+ TU(Pork,Sauce) = 37
+ TU(Pork,Rice) = 57
+Loại Salt Oil vì (TU =44 < minUtil)
+Loại Salt Rice vì (TU =44 < minUtil)
+Loại Fish Oil vì (TU =44 < minUtil)
+Loại Fish Rice vì (TU =44 < minUtil)
+
+--- KẾT QUẢ TẠI LEVEL 0 ---
+1) [Fish] = 98
+
+--- DFS LEVEL 1 ---
+ Utility(Protein)= 28
+ Utility(Staple)= 51
+ Utility(Seasoning)= 64
+ Utility(Meat)= 255
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Staple,Seasoning) = 216
+ TU(Staple,Meat) = 268
+ TU(Protein,Staple) = 84
+ TU(Protein,Seasoning) = 57
+ TU(Protein,Meat) = 57
+ TU(Seasoning,Meat) = 334
+
+--- KẾT QUẢ TẠI LEVEL 1 ---
+1) [Staple, Seasoning, Meat] = 204
+2) [Staple, Meat] = 206
+3) [Seasoning, Meat] = 283
+4) [Meat] = 255

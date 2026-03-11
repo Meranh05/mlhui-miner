@@ -1,0 +1,5 @@
+Water: 1
+Coke: 5
+Bread: 1
+Pasta: 2
+Steak: 10

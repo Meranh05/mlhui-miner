@@ -1,0 +1,13 @@
+Rice: 3
+Pork: 12
+Egg: 4
+Oil: 6
+Fish: 14
+Salt: 1
+Beef: 18
+Milk: 5
+Bread: 3
+Chicken: 11
+Sauce: 7
+Lemon: 2
+Garlic: 2

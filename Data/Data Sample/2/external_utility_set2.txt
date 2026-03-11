@@ -1,0 +1,10 @@
+Milk: 2
+Tea: 1
+Coffee: 4
+Sugar: 1
+Rice: 2
+Fish: 6
+Chicken: 5
+Beef: 7
+Apple: 2
+Banana: 2

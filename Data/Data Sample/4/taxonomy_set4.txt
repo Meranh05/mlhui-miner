@@ -1,0 +1,4 @@
+Mobile: Phone, Tablet
+Accessory: Case, Charger, Cable, Stylus, Earbuds
+Computer: Laptop, Monitor, Mouse, Keyboard, Screen
+Carry: Bag

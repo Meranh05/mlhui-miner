@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MLHUIMiner">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/MLHUIMiner.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

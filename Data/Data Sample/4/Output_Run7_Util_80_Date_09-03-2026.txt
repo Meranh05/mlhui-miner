@@ -1,0 +1,91 @@
+>>> ML-HUI START (minutil=80) <<<
+Bước 1: I ← tập hợp các mục trong D
+ I: [Cable, Laptop, Screen, Keyboard, Bag, Case, Stylus, Earbuds, Monitor, Mouse, Phone, Tablet, Charger]
+Bước 2: GI ← tập hợp các mục tổng quát trong I
+ GI: [Accessory, Carry, Computer, Mobile]
+Bước 3-4: Tính TWU của các mặt hàng trong I và GI
+ TWU(Cable) = 155
+ TWU(Laptop) = 140
+ TWU(Carry) = 70
+ TWU(Screen) = 43
+ TWU(Keyboard) = 117
+ TWU(Bag) = 70
+ TWU(Mobile) = 234
+ TWU(Case) = 177
+ TWU(Stylus) = 41
+ TWU(Earbuds) = 57
+ TWU(Accessory) = 356
+ TWU(Monitor) = 52
+ TWU(Mouse) = 122
+ TWU(Phone) = 146
+ TWU(Computer) = 282
+ TWU(Tablet) = 88
+ TWU(Charger) = 116
+Bước 5-6: Lọc các mục (I*) và các mục tổng quát (GT*) dựa trên ngưỡng TWU và cấp độ
+    - L0: Cable  (TWU=155)
+    - L0: Laptop  (TWU=140)
+    - L0: Keyboard  (TWU=117)
+    - L1: Mobile  (TWU=234)
+    - L0: Case  (TWU=177)
+    - L1: Accessory  (TWU=356)
+    - L0: Mouse  (TWU=122)
+    - L0: Phone  (TWU=146)
+    - L1: Computer  (TWU=282)
+    - L0: Tablet  (TWU=88)
+    - L0: Charger  (TWU=116)
+Bước 7: Xây dựng danh sách hữu ích(utility list) ban đầu và cấu trúc EUCS
+Bước 8: Tạo tổ hợp đệ quy và lựa chọn
+
+--- DFS LEVEL 0 ---
+ Utility(Tablet)= 60
+ Utility(Charger)= 20
+ Utility(Keyboard)= 24
+ Utility(Mouse)= 16
+ Utility(Laptop)= 100
+ Utility(Phone)= 80
+ Utility(Cable)= 12
+ Utility(Case)= 25
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Cable,Case) = 46
+ TU(Mouse,Cable) = 52
+ TU(Mouse,Laptop) = 70
+ TU(Phone,Cable) = 103
+ TU(Phone,Case) = 89
+ TU(Keyboard,Laptop) = 70
+ TU(Keyboard,Mouse) = 70
+ TU(Keyboard,Case) = 47
+ TU(Tablet,Keyboard) = 47
+ TU(Tablet,Case) = 88
+ TU(Charger,Cable) = 46
+ TU(Charger,Laptop) = 70
+ TU(Charger,Phone) = 46
+ TU(Charger,Case) = 46
+Loại Tablet Keyboard vì (TU =47 < minUtil)
+Loại Charger Laptop vì (TU =70 < minUtil)
+Loại Charger Phone vì (TU =46 < minUtil)
+Loại Charger Cable vì (TU =46 < minUtil)
+Loại Charger Case vì (TU =46 < minUtil)
+Loại Keyboard Mouse vì (TU =70 < minUtil)
+Loại Keyboard Laptop vì (TU =70 < minUtil)
+Loại Keyboard Case vì (TU =47 < minUtil)
+
+--- KẾT QUẢ TẠI LEVEL 0 ---
+1) [Laptop] = 100
+2) [Phone] = 80
+
+--- DFS LEVEL 1 ---
+ Utility(Mobile)= 140
+ Utility(Computer)= 198
+ Utility(Accessory)= 78
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Computer,Accessory) = 212
+ TU(Mobile,Accessory) = 234
+ TU(Mobile,Computer) = 90
+
+--- KẾT QUẢ TẠI LEVEL 1 ---
+1) [Mobile] = 140
+2) [Mobile, Computer] = 80
+3) [Mobile, Computer, Accessory] = 90
+4) [Mobile, Accessory] = 204
+5) [Computer] = 198
+6) [Computer, Accessory] = 152

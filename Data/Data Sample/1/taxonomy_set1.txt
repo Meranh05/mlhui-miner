@@ -1,0 +1,2 @@
+Beverage: Coke, Water
+Food: Bread, Pasta, Steak

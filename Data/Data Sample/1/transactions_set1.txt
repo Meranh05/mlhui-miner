@@ -1,0 +1,4 @@
+T1: Coke 2, Bread 2, Steak 1
+T2: Water 3, Pasta 2, Steak 1
+T3: Water 2, Bread 2
+T4: Coke 1, Bread 2

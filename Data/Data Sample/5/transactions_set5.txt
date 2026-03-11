@@ -1,0 +1,10 @@
+T1: Rice 5, Pork 2, Egg 3, Oil 1
+T2: Rice 3, Fish 2, Salt 1, Oil 1
+T3: Beef 2, Milk 2, Bread 2
+T4: Chicken 3, Rice 2, Sauce 1
+T5: Fish 3, Lemon 2, Salt 1
+T6: Pork 2, Garlic 3, Sauce 1
+T7: Egg 4, Bread 2, Milk 1
+T8: Beef 1, Rice 2, Sauce 2
+T9: Chicken 2, Rice 1, Oil 1
+T10: Fish 2, Garlic 2, Lemon 1

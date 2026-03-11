@@ -1,0 +1,93 @@
+>>> ML-HUI START (minutil=80) <<<
+Bước 1: I ← tập hợp các mục trong D
+ I: [A, B, C, D, E, F, G]
+Bước 2: GI ← tập hợp các mục tổng quát trong I
+ GI: [Group1, Group2, Group3]
+Bước 3-4: Tính TWU của các mặt hàng trong I và GI
+ TWU(Group1) = 264
+ TWU(A) = 147
+ TWU(Group2) = 264
+ TWU(B) = 147
+ TWU(C) = 124
+ TWU(D) = 171
+ TWU(E) = 160
+ TWU(F) = 150
+ TWU(Group3) = 221
+ TWU(G) = 141
+Bước 5-6: Lọc các mục (I*) và các mục tổng quát (GT*) dựa trên ngưỡng TWU và cấp độ
+    - L1: Group1  (TWU=264)
+    - L0: A  (TWU=147)
+    - L1: Group2  (TWU=264)
+    - L0: B  (TWU=147)
+    - L0: C  (TWU=124)
+    - L0: D  (TWU=171)
+    - L0: E  (TWU=160)
+    - L0: F  (TWU=150)
+    - L1: Group3  (TWU=221)
+    - L0: G  (TWU=141)
+Bước 7: Xây dựng danh sách hữu ích(utility list) ban đầu và cấu trúc EUCS
+Bước 8: Tạo tổ hợp đệ quy và lựa chọn
+
+--- DFS LEVEL 0 ---
+ Utility(C)= 33
+ Utility(G)= 42
+ Utility(A)= 15
+ Utility(B)= 28
+ Utility(F)= 42
+ Utility(E)= 60
+ Utility(D)= 44
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(A,B) = 71
+ TU(A,D) = 88
+ TU(A,E) = 126
+ TU(A,F) = 67
+ TU(B,D) = 91
+ TU(B,E) = 84
+ TU(B,F) = 70
+ TU(C,A) = 49
+ TU(C,B) = 83
+ TU(C,D) = 90
+ TU(C,E) = 62
+ TU(C,F) = 69
+ TU(C,G) = 62
+ TU(E,D) = 67
+ TU(F,D) = 150
+ TU(F,E) = 67
+ TU(G,A) = 65
+ TU(G,B) = 104
+ TU(G,D) = 70
+ TU(G,E) = 99
+ TU(G,F) = 70
+Loại C G vì (TU =62 < minUtil)
+Loại C A vì (TU =49 < minUtil)
+Loại C F vì (TU =69 < minUtil)
+Loại C E vì (TU =62 < minUtil)
+Loại G A vì (TU =65 < minUtil)
+Loại G F vì (TU =70 < minUtil)
+Loại G D vì (TU =70 < minUtil)
+Loại A B vì (TU =71 < minUtil)
+Loại A F vì (TU =67 < minUtil)
+Loại E D vì (TU =67 < minUtil)
+Loại B F vì (TU =70 < minUtil)
+Loại F E vì (TU =67 < minUtil)
+Loại E D vì (TU =67 < minUtil)
+
+--- KẾT QUẢ TẠI LEVEL 0 ---
+1) [F, D] = 82
+
+--- DFS LEVEL 1 ---
+ Utility(Group3)= 84
+ Utility(Group1)= 76
+ Utility(Group2)= 104
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Group1,Group2) = 264
+ TU(Group3,Group1) = 221
+ TU(Group3,Group2) = 221
+
+--- KẾT QUẢ TẠI LEVEL 1 ---
+1) [Group3] = 84
+2) [Group3, Group1] = 131
+3) [Group3, Group1, Group2] = 221
+4) [Group3, Group2] = 174
+5) [Group1, Group2] = 180
+6) [Group2] = 104

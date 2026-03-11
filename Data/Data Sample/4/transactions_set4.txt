@@ -1,0 +1,8 @@
+T1: Phone 1, Case 2, Charger 1, Cable 3
+T2: Laptop 1, Mouse 1, Keyboard 1
+T3: Tablet 1, Case 1, Stylus 1
+T4: Phone 2, Earbuds 1, Cable 1
+T5: Laptop 1, Bag 1, Charger 1
+T6: Monitor 1, Cable 2, Mouse 1
+T7: Phone 1, Screen 1, Case 1
+T8: Tablet 1, Keyboard 1, Case 1

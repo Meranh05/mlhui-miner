@@ -1,0 +1,50 @@
+>>> ML-HUI START (minutil=20) <<<
+Bước 1: I ← tập hợp các mục trong D
+ I: [Water, Coke, Steak, Pasta, Bread]
+Bước 2: GI ← tập hợp các mục tổng quát trong I
+ GI: [Beverage, Food]
+Bước 3-4: Tính TWU của các mặt hàng trong I và GI
+ TWU(Water) = 21
+ TWU(Coke) = 29
+ TWU(Steak) = 39
+ TWU(Pasta) = 17
+ TWU(Beverage) = 50
+ TWU(Food) = 50
+ TWU(Bread) = 33
+Bước 5-6: Lọc các mục (I*) và các mục tổng quát (GT*) dựa trên ngưỡng TWU và cấp độ
+    - L0: Water  (TWU=21)
+    - L0: Coke  (TWU=29)
+    - L0: Steak  (TWU=39)
+    - L1: Beverage  (TWU=50)
+    - L1: Food  (TWU=50)
+    - L0: Bread  (TWU=33)
+Bước 7: Xây dựng danh sách hữu ích(utility list) ban đầu và cấu trúc EUCS
+Bước 8: Tạo tổ hợp đệ quy và lựa chọn
+
+--- DFS LEVEL 0 ---
+ Utility(Water)= 5
+ Utility(Coke)= 15
+ Utility(Bread)= 6
+ Utility(Steak)= 20
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Water,Steak) = 17
+ TU(Water,Bread) = 4
+ TU(Coke,Steak) = 22
+ TU(Coke,Bread) = 29
+ TU(Bread,Steak) = 22
+
+--- KẾT QUẢ TẠI LEVEL 0 ---
+1) [Coke, Bread, Steak] = 22
+2) [Coke, Steak] = 20
+3) [Steak] = 20
+
+--- DFS LEVEL 1 ---
+ Utility(Beverage)= 20
+ Utility(Food)= 30
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Beverage,Food) = 50
+
+--- KẾT QUẢ TẠI LEVEL 1 ---
+1) [Beverage] = 20
+2) [Beverage, Food] = 50
+3) [Food] = 30

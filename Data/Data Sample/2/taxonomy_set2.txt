@@ -1,0 +1,4 @@
+Drink: Milk, Tea, Coffee
+Meat: Fish, Chicken, Beef
+Fruit: Apple, Banana
+Food: Rice, Sugar

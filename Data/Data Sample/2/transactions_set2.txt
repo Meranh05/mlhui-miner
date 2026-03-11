@@ -1,0 +1,10 @@
+T1: Milk 2, Tea 1, Sugar 3, Rice 2
+T2: Coffee 1, Sugar 2, Rice 1, Beef 1
+T3: Apple 3, Banana 2, Milk 1
+T4: Chicken 2, Rice 3
+T5: Fish 2, Tea 2, Sugar 1
+T6: Beef 1, Rice 2, Apple 1
+T7: Coffee 2, Milk 1, Banana 1
+T8: Chicken 1, Beef 1, Rice 2
+T9: Tea 3, Sugar 2
+T10: Fish 1, Apple 2, Banana 2

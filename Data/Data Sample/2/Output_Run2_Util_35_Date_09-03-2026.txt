@@ -1,0 +1,76 @@
+>>> ML-HUI START (minutil=35) <<<
+Bước 1: I ← tập hợp các mục trong D
+ I: [Tea, Apple, Fish, Chicken, Beef, Coffee, Sugar, Milk, Rice, Banana]
+Bước 2: GI ← tập hợp các mục tổng quát trong I
+ GI: [Fruit, Drink, Food, Meat]
+Bước 3-4: Tính TWU của các mặt hàng trong I và GI
+ TWU(Fruit) = 51
+ TWU(Drink) = 71
+ TWU(Coffee) = 27
+ TWU(Meat) = 89
+ TWU(Banana) = 38
+ TWU(Tea) = 32
+ TWU(Apple) = 39
+ TWU(Fish) = 29
+ TWU(Chicken) = 32
+ TWU(Beef) = 44
+ TWU(Sugar) = 47
+ TWU(Food) = 92
+ TWU(Milk) = 36
+ TWU(Rice) = 72
+Bước 5-6: Lọc các mục (I*) và các mục tổng quát (GT*) dựa trên ngưỡng TWU và cấp độ
+    - L1: Fruit  (TWU=51)
+    - L1: Drink  (TWU=71)
+    - L1: Meat  (TWU=89)
+    - L0: Banana  (TWU=38)
+    - L0: Apple  (TWU=39)
+    - L0: Beef  (TWU=44)
+    - L0: Sugar  (TWU=47)
+    - L1: Food  (TWU=92)
+    - L0: Milk  (TWU=36)
+    - L0: Rice  (TWU=72)
+Bước 7: Xây dựng danh sách hữu ích(utility list) ban đầu và cấu trúc EUCS
+Bước 8: Tạo tổ hợp đệ quy và lựa chọn
+
+--- DFS LEVEL 0 ---
+ Utility(Milk)= 8
+ Utility(Banana)= 10
+ Utility(Apple)= 12
+ Utility(Beef)= 21
+ Utility(Sugar)= 8
+ Utility(Rice)= 20
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Apple,Beef) = 13
+ TU(Apple,Rice) = 13
+ TU(Beef,Sugar) = 15
+ TU(Beef,Rice) = 44
+ TU(Sugar,Rice) = 27
+ TU(Banana,Apple) = 26
+ TU(Milk,Apple) = 12
+ TU(Milk,Sugar) = 12
+ TU(Milk,Rice) = 12
+ TU(Milk,Banana) = 24
+
+--- KẾT QUẢ TẠI LEVEL 0 ---
+(Không tìm thấy tập mục nào thỏa mãn)
+
+--- DFS LEVEL 1 ---
+ Utility(Fruit)= 22
+ Utility(Drink)= 26
+ Utility(Meat)= 54
+ Utility(Food)= 28
+ Cấu trúc Đồng xuất hiện Hữu ích (EUCS) 
+ TU(Fruit,Drink) = 24
+ TU(Fruit,Meat) = 27
+ TU(Fruit,Food) = 13
+ TU(Drink,Food) = 47
+ TU(Drink,Meat) = 30
+ TU(Meat,Food) = 75
+Loại Fruit Drink vì (TU =24 < minUtil)
+Loại Fruit Meat vì (TU =27 < minUtil)
+Loại Fruit Food vì (TU =13 < minUtil)
+Loại Drink Meat vì (TU =30 < minUtil)
+
+--- KẾT QUẢ TẠI LEVEL 1 ---
+1) [Meat] = 54
+2) [Meat, Food] = 67
